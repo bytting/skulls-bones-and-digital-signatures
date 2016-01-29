@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "digitalsignatures", "digitalsignatures.csproj", "{BF293006-73DE-401F-98A2-4E426660BE96}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "digitalsignatures-setup", "digitalsignatures-setup\nrpa-keys-setup.vdproj", "{457ACA1A-0AF7-48F9-983E-0DED5BDF8ECD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF293006-73DE-401F-98A2-4E426660BE96}.Debug|x86.ActiveCfg = Debug|x86
+		{BF293006-73DE-401F-98A2-4E426660BE96}.Debug|x86.Build.0 = Debug|x86
+		{BF293006-73DE-401F-98A2-4E426660BE96}.Release|x86.ActiveCfg = Release|x86
+		{BF293006-73DE-401F-98A2-4E426660BE96}.Release|x86.Build.0 = Release|x86
+		{457ACA1A-0AF7-48F9-983E-0DED5BDF8ECD}.Debug|x86.ActiveCfg = Debug
+		{457ACA1A-0AF7-48F9-983E-0DED5BDF8ECD}.Debug|x86.Build.0 = Debug
+		{457ACA1A-0AF7-48F9-983E-0DED5BDF8ECD}.Release|x86.ActiveCfg = Release
+		{457ACA1A-0AF7-48F9-983E-0DED5BDF8ECD}.Release|x86.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
