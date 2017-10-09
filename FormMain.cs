@@ -20,9 +20,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Security.Cryptography;
@@ -270,7 +268,7 @@ namespace nrpa_keys
             }
             catch (Exception ex)
             {
-                LogLine("Verify error: " + ex.Message);                
+                LogLine("VerifyFile: " + ex.Message);                
                 return;
             }
             finally
@@ -414,7 +412,7 @@ namespace nrpa_keys
             }
             catch (Exception ex)
             {
-                LogLine("LoadKeys: An error has occurred. " + ex.Message);
+                LogLine("LoadKeys: " + ex.Message);
                 return;
             }            
 

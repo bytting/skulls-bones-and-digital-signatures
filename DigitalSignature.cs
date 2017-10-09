@@ -49,9 +49,7 @@ namespace nrpa_keys
         {
             FileInfo fiPriv = new FileInfo(privKeyFile);
             EncryptToFile(fiPriv, password, GetBytes(mRsa.ToXmlString(true)));
-
-            FileInfo fiPub = new FileInfo(pubKeyFile);
-            SaveToFile(fiPub, mRsa.ToXmlString(false));            
+            SavePublicKey(pubKeyFile);
         }
 
         public void SavePublicKey(string pubKeyFile)
@@ -107,21 +105,16 @@ namespace nrpa_keys
             byte[] signature = null;
 
             if (!File.Exists(sigFile))
-                throw new DigitalSignatureException("Filen " + sigFile + " ble ikke funnet");
+                throw new DigitalSignatureException("The file " + sigFile + " was not found");
 
             try
             {
-                sr = new StreamReader(sigFile);
-                signature = Convert.FromBase64String(sr.ReadToEnd());
+                using (sr = new StreamReader(sigFile))                
+                    signature = Convert.FromBase64String(sr.ReadToEnd());
             }
             catch
             {
-                throw new DigitalSignatureException("Filen " + sigFile + " har ugyldig format");
-            }
-            finally
-            {
-                if(sr != null)
-                    sr.Close();
+                throw new DigitalSignatureException("The file " + sigFile + " has invalid format");
             }
 
             return signature;
@@ -136,29 +129,12 @@ namespace nrpa_keys
             rijndael.IV = keyGenerator.GetBytes(rijndael.BlockSize / 8);
             rijndael.Key = keyGenerator.GetBytes(rijndael.KeySize / 8);
 
-            FileStream fileStream = null;
-            try
+            using (FileStream fileStream = targetFile.Create())
             {
-                fileStream = targetFile.Create();
                 fileStream.Write(keyGenerator.Salt, 0, mSaltSize);
-
-                CryptoStream cryptoStream = null;
-                try
-                {
-                    cryptoStream = new CryptoStream(fileStream, rijndael.CreateEncryptor(), CryptoStreamMode.Write);
-                    cryptoStream.Write(data, 0, data.Length);
-                }
-                finally
-                {
-                    if (cryptoStream != null)
-                        cryptoStream.Close();
-                }
+                using (CryptoStream cryptoStream = new CryptoStream(fileStream, rijndael.CreateEncryptor(), CryptoStreamMode.Write))                
+                    cryptoStream.Write(data, 0, data.Length);                
             }
-            finally
-            {
-                if(fileStream != null)
-                    fileStream.Close();
-            }                       
         }
 
         private byte[] DecryptFromFile(FileInfo sourceFile, string password)
@@ -166,14 +142,10 @@ namespace nrpa_keys
             int dataLen;
             Rijndael rijndael;
             byte[] salt = null;
-            byte[] data = null;            
+            byte[] data = null;
 
-            FileStream fileStream = null;
-            CryptoStream cryptoStream = null;
-            try
+            using (FileStream fileStream = sourceFile.OpenRead())
             {
-                // read salt                
-                fileStream = sourceFile.OpenRead();
                 salt = new byte[mSaltSize];
                 fileStream.Read(salt, 0, mSaltSize);
 
@@ -186,16 +158,9 @@ namespace nrpa_keys
                 // decrypt
                 dataLen = (int)sourceFile.Length - mSaltSize;
                 data = new byte[dataLen];
-                
-                cryptoStream = new CryptoStream(fileStream, rijndael.CreateDecryptor(), CryptoStreamMode.Read);                                
-                cryptoStream.Read(data, 0, dataLen);                
-            }            
-            finally
-            {
-                if (cryptoStream != null)
-                    cryptoStream.Close();                
-                if (fileStream != null)
-                    fileStream.Close();
+
+                using (CryptoStream cryptoStream = new CryptoStream(fileStream, rijndael.CreateDecryptor(), CryptoStreamMode.Read))                
+                    cryptoStream.Read(data, 0, dataLen);
             }
 
             return data;
