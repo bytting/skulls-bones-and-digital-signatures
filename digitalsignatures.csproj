@@ -88,9 +88,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="TabControlWizard">
-      <HintPath>.\TabControlWizard.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutBox.cs">
@@ -177,6 +174,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\keys-64x64.png" />
+    <None Include="Resources\signature-64x64.png" />
+    <None Include="Resources\verify-64x64.png" />
+    <None Include="Resources\settings-64x64.png" />
     <Content Include="wax-seal.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

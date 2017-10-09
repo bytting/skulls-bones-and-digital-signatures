@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NRPA Digitale Signaturer")]
-[assembly: AssemblyDescription("Håndtering av digitale signaturer")]
+[assembly: AssemblyTitle("Skulls, Bones and Digital Signatures")]
+[assembly: AssemblyDescription("Basic handling of digital signatures")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Norwegian Radiation Protection Authority")]
-[assembly: AssemblyProduct("nrpa-digital-signatures")]
-[assembly: AssemblyCopyright("Copyright ©  2014 NRPA")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("basic-digital-signatures")]
+[assembly: AssemblyCopyright("Copyright ©  2017 Dag Robole")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

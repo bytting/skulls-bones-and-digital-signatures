@@ -1,6 +1,6 @@
 ﻿/*
     Skulls, Bones and Digital Signatures
-    Copyright (C) 2014  Dag Robole
+    Copyright (C) 2017  Dag Robole
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -45,8 +45,10 @@ namespace nrpa_keys
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            tabs.HideTabs = true;                        
-            tabs.SelectedTab = tabMenu;
+            tabs.Appearance = TabAppearance.FlatButtons;
+            tabs.ItemSize = new Size(0, 1);
+            tabs.SizeMode = TabSizeMode.Fixed;
+            tabs.SelectedTab = pageMenu;
 
             string exeFolder = (new FileInfo(System.Reflection.Assembly.GetEntryAssembly().Location)).Directory + "\\";
             string settingsFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\";
@@ -74,7 +76,7 @@ namespace nrpa_keys
 
         private void LogLine(string line)
         {
-            tbLog.AppendText("[" + DateTime.Now.ToString() + "] " + line + Environment.NewLine);
+            lbLog.Items.Insert(0, "[" + DateTime.Now.ToString() + "] " + line);
         }
 
         private void MenuItemClose_Click(object sender, EventArgs e)
@@ -284,34 +286,34 @@ namespace nrpa_keys
 
         private void btnMenuKeys_Click(object sender, EventArgs e)
         {
-            tabs.SelectedTab = tabKeys;
+            tabs.SelectedTab = pageKeys;
         }
 
         private void btnMenuSign_Click(object sender, EventArgs e)
         {
-            tabs.SelectedTab = tabSign;
+            tabs.SelectedTab = pageSign;
         }
 
         private void btnMenuVerify_Click(object sender, EventArgs e)
         {
-            tabs.SelectedTab = tabVerify;
+            tabs.SelectedTab = pageVerify;
         }
 
         private void btnMenuSettings_Click(object sender, EventArgs e)
         {
-            tabs.SelectedTab = tabSettings;
+            tabs.SelectedTab = pageSettings;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            tabs.SelectedTab = tabMenu;
+            tabs.SelectedTab = pageMenu;
         }
 
         private void tabs_SelectedIndexChanged(object sender, EventArgs e)
         {            
             lblView.Text = tabs.SelectedTab.Text;
 
-            if (tabs.SelectedTab == tabMenu)
+            if (tabs.SelectedTab == pageMenu)
             {
                 btnBack.Enabled = false;
                 panelLog.Visible = false;
@@ -322,21 +324,21 @@ namespace nrpa_keys
                 panelLog.Visible = true;
             }
 
-            if (tabs.SelectedTab == tabKeys)
+            if (tabs.SelectedTab == pageKeys)
             {
                 btnNewKey.Visible = true;
                 PopulatePrivateKeyList(ref lwKeys);
             }
             else btnNewKey.Visible = false;
 
-            if (tabs.SelectedTab == tabSign)
+            if (tabs.SelectedTab == pageSign)
             {
                 btnSignFile.Visible = true;
                 PopulatePrivateKeyList(ref lwSign);
             }
             else btnSignFile.Visible = false;
 
-            if (tabs.SelectedTab == tabVerify)
+            if (tabs.SelectedTab == pageVerify)
             {
                 btnVerify.Visible = true;
                 PopulatePublicKeyList(ref lwVerify);

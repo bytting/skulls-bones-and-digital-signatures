@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_1D0F379A6F2739B0F598DA7A295076DE"
+        "OwnerKey" = "8:_6F6DF56A86AC4C94938D82C14B7B7167"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5A6FDA8B16064FB083036F600C1AFDF4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -27,12 +33,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_CA35E677DAA2E38151CF0C91BF533971"
-        "OwnerKey" = "8:_6F6DF56A86AC4C94938D82C14B7B7167"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_6F6DF56A86AC4C94938D82C14B7B7167"
         "MsmSig" = "8:_UNDEFINED"
@@ -40,7 +40,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_CA35E677DAA2E38151CF0C91BF533971"
+        "OwnerKey" = "8:_1D0F379A6F2739B0F598DA7A295076DE"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -138,34 +138,14 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5A6FDA8B16064FB083036F600C1AFDF4"
-            {
-            "SourcePath" = "8:..\\wax-seal.ico"
-            "TargetName" = "8:wax-seal.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_3FD7FA4E2E8D44F49F1C39F794A0691E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CA35E677DAA2E38151CF0C91BF533971"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1D0F379A6F2739B0F598DA7A295076DE"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:TabControlWizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8870950e8cccab7c, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_CA35E677DAA2E38151CF0C91BF533971"
+                    "_1D0F379A6F2739B0F598DA7A295076DE"
                     {
                     "Name" = "8:TabControlWizard.dll"
                     "Attributes" = "3:512"
@@ -187,6 +167,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5A6FDA8B16064FB083036F600C1AFDF4"
+            {
+            "SourcePath" = "8:..\\wax-seal.ico"
+            "TargetName" = "8:wax-seal.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_3FD7FA4E2E8D44F49F1C39F794A0691E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }
@@ -257,7 +257,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Skulls, Bones and Digital Signatures"
         "ProductCode" = "8:{AD1B714A-FE73-4649-8A46-C82EB0803B18}"
-        "PackageCode" = "8:{47C66A58-9198-422E-A282-A15C849A85D1}"
+        "PackageCode" = "8:{6B0FFAC5-8E3B-4395-933E-C49BFCC2E700}"
         "UpgradeCode" = "8:{2FAB339C-64B6-48A1-8D08-68D3DB19A8F1}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

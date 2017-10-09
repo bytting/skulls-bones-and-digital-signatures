@@ -49,19 +49,19 @@
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnOk);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 144);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(0, 202);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(278, 24);
+            this.panel1.Size = new System.Drawing.Size(418, 28);
             this.panel1.TabIndex = 0;
             // 
             // btnCancel
             // 
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCancel.Location = new System.Drawing.Point(128, 0);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Location = new System.Drawing.Point(244, 0);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 24);
+            this.btnCancel.Size = new System.Drawing.Size(87, 28);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -70,10 +70,10 @@
             // btnOk
             // 
             this.btnOk.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnOk.Location = new System.Drawing.Point(203, 0);
-            this.btnOk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOk.Location = new System.Drawing.Point(331, 0);
+            this.btnOk.Margin = new System.Windows.Forms.Padding(2);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(75, 24);
+            this.btnOk.Size = new System.Drawing.Size(87, 28);
             this.btnOk.TabIndex = 3;
             this.btnOk.Text = "Ok";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -81,61 +81,61 @@
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(18, 32);
-            this.tbName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbName.Location = new System.Drawing.Point(21, 36);
+            this.tbName.Margin = new System.Windows.Forms.Padding(2);
             this.tbName.MaxLength = 20;
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(240, 20);
+            this.tbName.Size = new System.Drawing.Size(371, 21);
             this.tbName.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 11);
+            this.label1.Location = new System.Drawing.Point(21, 13);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 13);
+            this.label1.Size = new System.Drawing.Size(135, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "Enter name for new key";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 55);
+            this.label2.Location = new System.Drawing.Point(21, 63);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 13);
+            this.label2.Size = new System.Drawing.Size(158, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Enter password for new key";
             // 
             // tbPass1
             // 
-            this.tbPass1.Location = new System.Drawing.Point(18, 72);
-            this.tbPass1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPass1.Location = new System.Drawing.Point(21, 84);
+            this.tbPass1.Margin = new System.Windows.Forms.Padding(2);
             this.tbPass1.MaxLength = 80;
             this.tbPass1.Name = "tbPass1";
             this.tbPass1.PasswordChar = '*';
-            this.tbPass1.Size = new System.Drawing.Size(237, 20);
+            this.tbPass1.Size = new System.Drawing.Size(371, 21);
             this.tbPass1.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 96);
+            this.label3.Location = new System.Drawing.Point(23, 110);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 13);
+            this.label3.Size = new System.Drawing.Size(169, 15);
             this.label3.TabIndex = 5;
             this.label3.Text = "Repeat password for new key";
             // 
             // tbPass2
             // 
-            this.tbPass2.Location = new System.Drawing.Point(20, 112);
-            this.tbPass2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPass2.Location = new System.Drawing.Point(23, 130);
+            this.tbPass2.Margin = new System.Windows.Forms.Padding(2);
             this.tbPass2.MaxLength = 80;
             this.tbPass2.Name = "tbPass2";
             this.tbPass2.PasswordChar = '*';
-            this.tbPass2.Size = new System.Drawing.Size(235, 20);
+            this.tbPass2.Size = new System.Drawing.Size(369, 21);
             this.tbPass2.TabIndex = 2;
             this.tbPass2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPass2_KeyPress);
             // 
@@ -143,10 +143,10 @@
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblStatus});
-            this.statusStrip.Location = new System.Drawing.Point(0, 168);
+            this.statusStrip.Location = new System.Drawing.Point(0, 230);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
-            this.statusStrip.Size = new System.Drawing.Size(278, 22);
+            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 12, 0);
+            this.statusStrip.Size = new System.Drawing.Size(418, 22);
             this.statusStrip.SizingGrip = false;
             this.statusStrip.TabIndex = 7;
             // 
@@ -158,9 +158,9 @@
             // 
             // FormName
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(278, 190);
+            this.ClientSize = new System.Drawing.Size(418, 252);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tbPass2);
@@ -170,9 +170,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.statusStrip);
+            this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormName";
