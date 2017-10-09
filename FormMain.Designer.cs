@@ -38,32 +38,41 @@
             this.MenuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.ilKeys = new System.Windows.Forms.ImageList(this.components);
             this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.btnBack = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.lblView = new System.Windows.Forms.ToolStripLabel();
             this.FolderBrowser = new System.Windows.Forms.FolderBrowserDialog();
             this.FileDialog = new System.Windows.Forms.OpenFileDialog();
             this.flowMenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnMenuKeys = new System.Windows.Forms.Button();
+            this.btnMenuSign = new System.Windows.Forms.Button();
+            this.btnMenuVerify = new System.Windows.Forms.Button();
+            this.btnMenuSettings = new System.Windows.Forms.Button();
             this.lwKeys = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExportPubKey = new System.Windows.Forms.Button();
+            this.btnNewKey = new System.Windows.Forms.Button();
             this.lwSign = new System.Windows.Forms.ListView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSignFile = new System.Windows.Forms.Button();
             this.lwVerify = new System.Windows.Forms.ListView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnVerify = new System.Windows.Forms.Button();
             this.tblSettings = new System.Windows.Forms.TableLayoutPanel();
-            this.cbSettingsUseDbForPriv = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbSettingsPrivateKeyFolder = new System.Windows.Forms.TextBox();
-            this.btnSettingsChangePrivFolder = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.tbSettingsPublicKeyDbString = new System.Windows.Forms.TextBox();
-            this.tbSettingsPublicKeyFolder = new System.Windows.Forms.TextBox();
-            this.btnSettingsChangePubFolder = new System.Windows.Forms.Button();
-            this.cbSettingsUseDbForPub = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tbSettingsPrivateKeyDbString = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbSettingsPrivateKeyFolder = new System.Windows.Forms.TextBox();
+            this.btnSettingsChangePrivFolder = new System.Windows.Forms.Button();
+            this.cbSettingsUseDbForPriv = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbSettingsPublicKeyFolder = new System.Windows.Forms.TextBox();
+            this.btnSettingsChangePubFolder = new System.Windows.Forms.Button();
+            this.cbSettingsUseDbForPub = new System.Windows.Forms.CheckBox();
             this.panelLog = new System.Windows.Forms.Panel();
+            this.lbLog = new System.Windows.Forms.ListBox();
             this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.tabs = new System.Windows.Forms.TabControl();
             this.pageMenu = new System.Windows.Forms.TabPage();
@@ -71,15 +80,6 @@
             this.pageSign = new System.Windows.Forms.TabPage();
             this.pageVerify = new System.Windows.Forms.TabPage();
             this.pageSettings = new System.Windows.Forms.TabPage();
-            this.btnMenuKeys = new System.Windows.Forms.Button();
-            this.btnMenuSign = new System.Windows.Forms.Button();
-            this.btnMenuVerify = new System.Windows.Forms.Button();
-            this.btnMenuSettings = new System.Windows.Forms.Button();
-            this.btnNewKey = new System.Windows.Forms.Button();
-            this.btnSignFile = new System.Windows.Forms.Button();
-            this.btnVerify = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.ToolStripButton();
-            this.lbLog = new System.Windows.Forms.ListBox();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.flowMenu.SuspendLayout();
@@ -143,7 +143,7 @@
             // MenuItemAbout
             // 
             this.MenuItemAbout.Name = "MenuItemAbout";
-            this.MenuItemAbout.Size = new System.Drawing.Size(152, 22);
+            this.MenuItemAbout.Size = new System.Drawing.Size(116, 22);
             this.MenuItemAbout.Text = "&About...";
             this.MenuItemAbout.Click += new System.EventHandler(this.MenuItemAbout_Click);
             // 
@@ -164,6 +164,18 @@
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(1214, 25);
             this.toolStrip.TabIndex = 3;
+            // 
+            // btnBack
+            // 
+            this.btnBack.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnBack.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(23, 22);
+            this.btnBack.Text = "Meny";
+            this.btnBack.ToolTipText = "Tilbake til hovedmeny";
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // toolStripSeparator1
             // 
@@ -202,18 +214,91 @@
             this.flowMenu.Size = new System.Drawing.Size(1200, 425);
             this.flowMenu.TabIndex = 0;
             // 
+            // btnMenuKeys
+            // 
+            this.btnMenuKeys.FlatAppearance.BorderSize = 0;
+            this.btnMenuKeys.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMenuKeys.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMenuKeys.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuKeys.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuKeys.Image = global::digitalsignatures.Properties.Resources.keys_64x64;
+            this.btnMenuKeys.Location = new System.Drawing.Point(19, 20);
+            this.btnMenuKeys.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMenuKeys.Name = "btnMenuKeys";
+            this.btnMenuKeys.Size = new System.Drawing.Size(140, 150);
+            this.btnMenuKeys.TabIndex = 0;
+            this.btnMenuKeys.Text = "My keys";
+            this.btnMenuKeys.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMenuKeys.UseVisualStyleBackColor = true;
+            this.btnMenuKeys.Click += new System.EventHandler(this.btnMenuKeys_Click);
+            // 
+            // btnMenuSign
+            // 
+            this.btnMenuSign.FlatAppearance.BorderSize = 0;
+            this.btnMenuSign.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMenuSign.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMenuSign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuSign.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuSign.Image = global::digitalsignatures.Properties.Resources.signature_64x64;
+            this.btnMenuSign.Location = new System.Drawing.Point(163, 20);
+            this.btnMenuSign.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMenuSign.Name = "btnMenuSign";
+            this.btnMenuSign.Size = new System.Drawing.Size(140, 150);
+            this.btnMenuSign.TabIndex = 1;
+            this.btnMenuSign.Text = "Sign";
+            this.btnMenuSign.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMenuSign.UseVisualStyleBackColor = true;
+            this.btnMenuSign.Click += new System.EventHandler(this.btnMenuSign_Click);
+            // 
+            // btnMenuVerify
+            // 
+            this.btnMenuVerify.FlatAppearance.BorderSize = 0;
+            this.btnMenuVerify.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMenuVerify.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMenuVerify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuVerify.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuVerify.Image = global::digitalsignatures.Properties.Resources.verify_64x64;
+            this.btnMenuVerify.Location = new System.Drawing.Point(307, 20);
+            this.btnMenuVerify.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMenuVerify.Name = "btnMenuVerify";
+            this.btnMenuVerify.Size = new System.Drawing.Size(140, 150);
+            this.btnMenuVerify.TabIndex = 2;
+            this.btnMenuVerify.Text = "Verify";
+            this.btnMenuVerify.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMenuVerify.UseVisualStyleBackColor = true;
+            this.btnMenuVerify.Click += new System.EventHandler(this.btnMenuVerify_Click);
+            // 
+            // btnMenuSettings
+            // 
+            this.btnMenuSettings.FlatAppearance.BorderSize = 0;
+            this.btnMenuSettings.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMenuSettings.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMenuSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuSettings.Image = global::digitalsignatures.Properties.Resources.settings_64x64;
+            this.btnMenuSettings.Location = new System.Drawing.Point(451, 20);
+            this.btnMenuSettings.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMenuSettings.Name = "btnMenuSettings";
+            this.btnMenuSettings.Size = new System.Drawing.Size(140, 150);
+            this.btnMenuSettings.TabIndex = 3;
+            this.btnMenuSettings.Text = "Settings";
+            this.btnMenuSettings.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMenuSettings.UseVisualStyleBackColor = true;
+            this.btnMenuSettings.Click += new System.EventHandler(this.btnMenuSettings_Click);
+            // 
             // lwKeys
             // 
             this.lwKeys.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.lwKeys.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lwKeys.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lwKeys.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lwKeys.HideSelection = false;
             this.lwKeys.LargeImageList = this.ilKeys;
             this.lwKeys.Location = new System.Drawing.Point(3, 3);
             this.lwKeys.Margin = new System.Windows.Forms.Padding(2);
             this.lwKeys.MultiSelect = false;
             this.lwKeys.Name = "lwKeys";
-            this.lwKeys.Size = new System.Drawing.Size(1095, 421);
+            this.lwKeys.Size = new System.Drawing.Size(1095, 425);
             this.lwKeys.SmallImageList = this.ilKeys;
             this.lwKeys.TabIndex = 4;
             this.lwKeys.UseCompatibleStateImageBehavior = false;
@@ -227,7 +312,7 @@
             this.panel1.Location = new System.Drawing.Point(1098, 3);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(105, 421);
+            this.panel1.Size = new System.Drawing.Size(105, 425);
             this.panel1.TabIndex = 5;
             // 
             // btnExportPubKey
@@ -237,7 +322,7 @@
             this.btnExportPubKey.FlatAppearance.BorderSize = 0;
             this.btnExportPubKey.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnExportPubKey.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnExportPubKey.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnExportPubKey.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnExportPubKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportPubKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportPubKey.Location = new System.Drawing.Point(0, 93);
@@ -249,18 +334,40 @@
             this.btnExportPubKey.UseVisualStyleBackColor = true;
             this.btnExportPubKey.Click += new System.EventHandler(this.btnExportPubKey_Click);
             // 
+            // btnNewKey
+            // 
+            this.btnNewKey.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNewKey.FlatAppearance.BorderSize = 0;
+            this.btnNewKey.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnNewKey.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnNewKey.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnNewKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewKey.Image = ((System.Drawing.Image)(resources.GetObject("btnNewKey.Image")));
+            this.btnNewKey.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNewKey.Location = new System.Drawing.Point(0, 0);
+            this.btnNewKey.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNewKey.Name = "btnNewKey";
+            this.btnNewKey.Size = new System.Drawing.Size(105, 93);
+            this.btnNewKey.TabIndex = 0;
+            this.btnNewKey.Text = "New key";
+            this.btnNewKey.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNewKey.UseVisualStyleBackColor = true;
+            this.btnNewKey.Click += new System.EventHandler(this.MenuItemNewKey_Click);
+            // 
             // lwSign
             // 
             this.lwSign.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.lwSign.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lwSign.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lwSign.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lwSign.HideSelection = false;
             this.lwSign.LargeImageList = this.ilKeys;
             this.lwSign.Location = new System.Drawing.Point(3, 3);
             this.lwSign.Margin = new System.Windows.Forms.Padding(2);
             this.lwSign.MultiSelect = false;
             this.lwSign.Name = "lwSign";
-            this.lwSign.Size = new System.Drawing.Size(1095, 421);
+            this.lwSign.Size = new System.Drawing.Size(1095, 425);
             this.lwSign.SmallImageList = this.ilKeys;
             this.lwSign.TabIndex = 1;
             this.lwSign.UseCompatibleStateImageBehavior = false;
@@ -272,8 +379,28 @@
             this.panel2.Location = new System.Drawing.Point(1098, 3);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(105, 421);
+            this.panel2.Size = new System.Drawing.Size(105, 425);
             this.panel2.TabIndex = 2;
+            // 
+            // btnSignFile
+            // 
+            this.btnSignFile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSignFile.FlatAppearance.BorderSize = 0;
+            this.btnSignFile.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSignFile.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSignFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignFile.Image = ((System.Drawing.Image)(resources.GetObject("btnSignFile.Image")));
+            this.btnSignFile.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSignFile.Location = new System.Drawing.Point(0, 0);
+            this.btnSignFile.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSignFile.Name = "btnSignFile";
+            this.btnSignFile.Size = new System.Drawing.Size(105, 93);
+            this.btnSignFile.TabIndex = 0;
+            this.btnSignFile.Text = "Sign files";
+            this.btnSignFile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSignFile.UseVisualStyleBackColor = true;
+            this.btnSignFile.Click += new System.EventHandler(this.MenuItemSignFile_Click);
             // 
             // lwVerify
             // 
@@ -281,12 +408,13 @@
             this.lwVerify.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lwVerify.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lwVerify.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lwVerify.HideSelection = false;
             this.lwVerify.LargeImageList = this.ilKeys;
             this.lwVerify.Location = new System.Drawing.Point(3, 3);
             this.lwVerify.Margin = new System.Windows.Forms.Padding(2);
             this.lwVerify.MultiSelect = false;
             this.lwVerify.Name = "lwVerify";
-            this.lwVerify.Size = new System.Drawing.Size(1095, 421);
+            this.lwVerify.Size = new System.Drawing.Size(1095, 425);
             this.lwVerify.SmallImageList = this.ilKeys;
             this.lwVerify.TabIndex = 0;
             this.lwVerify.UseCompatibleStateImageBehavior = false;
@@ -298,8 +426,28 @@
             this.panel3.Location = new System.Drawing.Point(1098, 3);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(105, 421);
+            this.panel3.Size = new System.Drawing.Size(105, 425);
             this.panel3.TabIndex = 1;
+            // 
+            // btnVerify
+            // 
+            this.btnVerify.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVerify.FlatAppearance.BorderSize = 0;
+            this.btnVerify.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnVerify.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnVerify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerify.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerify.Image = ((System.Drawing.Image)(resources.GetObject("btnVerify.Image")));
+            this.btnVerify.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnVerify.Location = new System.Drawing.Point(0, 0);
+            this.btnVerify.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVerify.Name = "btnVerify";
+            this.btnVerify.Size = new System.Drawing.Size(105, 93);
+            this.btnVerify.TabIndex = 0;
+            this.btnVerify.Text = "Verify file";
+            this.btnVerify.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnVerify.UseVisualStyleBackColor = true;
+            this.btnVerify.Click += new System.EventHandler(this.MenuItemVerifyFile_Click);
             // 
             // tblSettings
             // 
@@ -334,20 +482,48 @@
             this.tblSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tblSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tblSettings.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblSettings.Size = new System.Drawing.Size(1200, 421);
+            this.tblSettings.Size = new System.Drawing.Size(1200, 425);
             this.tblSettings.TabIndex = 0;
             // 
-            // cbSettingsUseDbForPriv
+            // tbSettingsPublicKeyDbString
             // 
-            this.cbSettingsUseDbForPriv.AutoSize = true;
-            this.tblSettings.SetColumnSpan(this.cbSettingsUseDbForPriv, 2);
-            this.cbSettingsUseDbForPriv.Location = new System.Drawing.Point(2, 58);
-            this.cbSettingsUseDbForPriv.Margin = new System.Windows.Forms.Padding(2);
-            this.cbSettingsUseDbForPriv.Name = "cbSettingsUseDbForPriv";
-            this.cbSettingsUseDbForPriv.Size = new System.Drawing.Size(188, 19);
-            this.cbSettingsUseDbForPriv.TabIndex = 6;
-            this.cbSettingsUseDbForPriv.Text = "Use database for private keys";
-            this.cbSettingsUseDbForPriv.UseVisualStyleBackColor = true;
+            this.tblSettings.SetColumnSpan(this.tbSettingsPublicKeyDbString, 3);
+            this.tbSettingsPublicKeyDbString.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbSettingsPublicKeyDbString.Location = new System.Drawing.Point(302, 198);
+            this.tbSettingsPublicKeyDbString.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSettingsPublicKeyDbString.Name = "tbSettingsPublicKeyDbString";
+            this.tbSettingsPublicKeyDbString.Size = new System.Drawing.Size(896, 21);
+            this.tbSettingsPublicKeyDbString.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(2, 84);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(158, 15);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Database connection string";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(2, 196);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(158, 15);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Database connection string";
+            // 
+            // tbSettingsPrivateKeyDbString
+            // 
+            this.tblSettings.SetColumnSpan(this.tbSettingsPrivateKeyDbString, 3);
+            this.tbSettingsPrivateKeyDbString.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbSettingsPrivateKeyDbString.Location = new System.Drawing.Point(302, 86);
+            this.tbSettingsPrivateKeyDbString.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSettingsPrivateKeyDbString.Name = "tbSettingsPrivateKeyDbString";
+            this.tbSettingsPrivateKeyDbString.Size = new System.Drawing.Size(896, 21);
+            this.tbSettingsPrivateKeyDbString.TabIndex = 11;
             // 
             // label1
             // 
@@ -383,6 +559,18 @@
             this.btnSettingsChangePrivFolder.UseVisualStyleBackColor = true;
             this.btnSettingsChangePrivFolder.Click += new System.EventHandler(this.btnSettingsChangePrivFolder_Click);
             // 
+            // cbSettingsUseDbForPriv
+            // 
+            this.cbSettingsUseDbForPriv.AutoSize = true;
+            this.tblSettings.SetColumnSpan(this.cbSettingsUseDbForPriv, 2);
+            this.cbSettingsUseDbForPriv.Location = new System.Drawing.Point(2, 58);
+            this.cbSettingsUseDbForPriv.Margin = new System.Windows.Forms.Padding(2);
+            this.cbSettingsUseDbForPriv.Name = "cbSettingsUseDbForPriv";
+            this.cbSettingsUseDbForPriv.Size = new System.Drawing.Size(188, 19);
+            this.cbSettingsUseDbForPriv.TabIndex = 6;
+            this.cbSettingsUseDbForPriv.Text = "Use database for private keys";
+            this.cbSettingsUseDbForPriv.UseVisualStyleBackColor = true;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -392,16 +580,6 @@
             this.label2.Size = new System.Drawing.Size(163, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Directory to store public keys";
-            // 
-            // tbSettingsPublicKeyDbString
-            // 
-            this.tblSettings.SetColumnSpan(this.tbSettingsPublicKeyDbString, 3);
-            this.tbSettingsPublicKeyDbString.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbSettingsPublicKeyDbString.Location = new System.Drawing.Point(302, 198);
-            this.tbSettingsPublicKeyDbString.Margin = new System.Windows.Forms.Padding(2);
-            this.tbSettingsPublicKeyDbString.Name = "tbSettingsPublicKeyDbString";
-            this.tbSettingsPublicKeyDbString.Size = new System.Drawing.Size(896, 21);
-            this.tbSettingsPublicKeyDbString.TabIndex = 7;
             // 
             // tbSettingsPublicKeyFolder
             // 
@@ -439,36 +617,6 @@
             this.cbSettingsUseDbForPub.Text = "Use database for public keys";
             this.cbSettingsUseDbForPub.UseVisualStyleBackColor = true;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(2, 84);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 15);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Database connection string";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(2, 196);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(158, 15);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Database connection string";
-            // 
-            // tbSettingsPrivateKeyDbString
-            // 
-            this.tblSettings.SetColumnSpan(this.tbSettingsPrivateKeyDbString, 3);
-            this.tbSettingsPrivateKeyDbString.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbSettingsPrivateKeyDbString.Location = new System.Drawing.Point(302, 86);
-            this.tbSettingsPrivateKeyDbString.Margin = new System.Windows.Forms.Padding(2);
-            this.tbSettingsPrivateKeyDbString.Name = "tbSettingsPrivateKeyDbString";
-            this.tbSettingsPrivateKeyDbString.Size = new System.Drawing.Size(896, 21);
-            this.tbSettingsPrivateKeyDbString.TabIndex = 11;
-            // 
             // panelLog
             // 
             this.panelLog.Controls.Add(this.lbLog);
@@ -478,6 +626,17 @@
             this.panelLog.Name = "panelLog";
             this.panelLog.Size = new System.Drawing.Size(1214, 118);
             this.panelLog.TabIndex = 5;
+            // 
+            // lbLog
+            // 
+            this.lbLog.BackColor = System.Drawing.SystemColors.Info;
+            this.lbLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbLog.FormattingEnabled = true;
+            this.lbLog.ItemHeight = 15;
+            this.lbLog.Location = new System.Drawing.Point(0, 0);
+            this.lbLog.Name = "lbLog";
+            this.lbLog.Size = new System.Drawing.Size(1214, 118);
+            this.lbLog.TabIndex = 0;
             // 
             // tabs
             // 
@@ -510,10 +669,10 @@
             this.pageKeys.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pageKeys.Controls.Add(this.lwKeys);
             this.pageKeys.Controls.Add(this.panel1);
-            this.pageKeys.Location = new System.Drawing.Point(4, 23);
+            this.pageKeys.Location = new System.Drawing.Point(4, 24);
             this.pageKeys.Name = "pageKeys";
             this.pageKeys.Padding = new System.Windows.Forms.Padding(3);
-            this.pageKeys.Size = new System.Drawing.Size(1206, 427);
+            this.pageKeys.Size = new System.Drawing.Size(1206, 431);
             this.pageKeys.TabIndex = 1;
             this.pageKeys.Text = "My keys";
             // 
@@ -522,10 +681,10 @@
             this.pageSign.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pageSign.Controls.Add(this.lwSign);
             this.pageSign.Controls.Add(this.panel2);
-            this.pageSign.Location = new System.Drawing.Point(4, 23);
+            this.pageSign.Location = new System.Drawing.Point(4, 24);
             this.pageSign.Name = "pageSign";
             this.pageSign.Padding = new System.Windows.Forms.Padding(3);
-            this.pageSign.Size = new System.Drawing.Size(1206, 427);
+            this.pageSign.Size = new System.Drawing.Size(1206, 431);
             this.pageSign.TabIndex = 2;
             this.pageSign.Text = "Signatures";
             // 
@@ -534,10 +693,10 @@
             this.pageVerify.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pageVerify.Controls.Add(this.lwVerify);
             this.pageVerify.Controls.Add(this.panel3);
-            this.pageVerify.Location = new System.Drawing.Point(4, 23);
+            this.pageVerify.Location = new System.Drawing.Point(4, 24);
             this.pageVerify.Name = "pageVerify";
             this.pageVerify.Padding = new System.Windows.Forms.Padding(3);
-            this.pageVerify.Size = new System.Drawing.Size(1206, 427);
+            this.pageVerify.Size = new System.Drawing.Size(1206, 431);
             this.pageVerify.TabIndex = 3;
             this.pageVerify.Text = "Verify";
             // 
@@ -545,168 +704,12 @@
             // 
             this.pageSettings.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pageSettings.Controls.Add(this.tblSettings);
-            this.pageSettings.Location = new System.Drawing.Point(4, 23);
+            this.pageSettings.Location = new System.Drawing.Point(4, 24);
             this.pageSettings.Name = "pageSettings";
             this.pageSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.pageSettings.Size = new System.Drawing.Size(1206, 427);
+            this.pageSettings.Size = new System.Drawing.Size(1206, 431);
             this.pageSettings.TabIndex = 4;
             this.pageSettings.Text = "Settings";
-            // 
-            // btnMenuKeys
-            // 
-            this.btnMenuKeys.FlatAppearance.BorderSize = 0;
-            this.btnMenuKeys.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnMenuKeys.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnMenuKeys.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuKeys.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuKeys.Image = global::digitalsignatures.Properties.Resources.keys_64x64;
-            this.btnMenuKeys.Location = new System.Drawing.Point(19, 20);
-            this.btnMenuKeys.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMenuKeys.Name = "btnMenuKeys";
-            this.btnMenuKeys.Size = new System.Drawing.Size(140, 150);
-            this.btnMenuKeys.TabIndex = 0;
-            this.btnMenuKeys.Text = "My keys";
-            this.btnMenuKeys.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnMenuKeys.UseVisualStyleBackColor = true;
-            this.btnMenuKeys.Click += new System.EventHandler(this.btnMenuKeys_Click);
-            // 
-            // btnMenuSign
-            // 
-            this.btnMenuSign.FlatAppearance.BorderSize = 0;
-            this.btnMenuSign.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnMenuSign.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnMenuSign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuSign.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuSign.Image = global::digitalsignatures.Properties.Resources.signature_64x64;
-            this.btnMenuSign.Location = new System.Drawing.Point(163, 20);
-            this.btnMenuSign.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMenuSign.Name = "btnMenuSign";
-            this.btnMenuSign.Size = new System.Drawing.Size(140, 150);
-            this.btnMenuSign.TabIndex = 1;
-            this.btnMenuSign.Text = "Sign";
-            this.btnMenuSign.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnMenuSign.UseVisualStyleBackColor = true;
-            this.btnMenuSign.Click += new System.EventHandler(this.btnMenuSign_Click);
-            // 
-            // btnMenuVerify
-            // 
-            this.btnMenuVerify.FlatAppearance.BorderSize = 0;
-            this.btnMenuVerify.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnMenuVerify.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnMenuVerify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuVerify.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuVerify.Image = global::digitalsignatures.Properties.Resources.verify_64x64;
-            this.btnMenuVerify.Location = new System.Drawing.Point(307, 20);
-            this.btnMenuVerify.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMenuVerify.Name = "btnMenuVerify";
-            this.btnMenuVerify.Size = new System.Drawing.Size(140, 150);
-            this.btnMenuVerify.TabIndex = 2;
-            this.btnMenuVerify.Text = "Verify";
-            this.btnMenuVerify.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnMenuVerify.UseVisualStyleBackColor = true;
-            this.btnMenuVerify.Click += new System.EventHandler(this.btnMenuVerify_Click);
-            // 
-            // btnMenuSettings
-            // 
-            this.btnMenuSettings.FlatAppearance.BorderSize = 0;
-            this.btnMenuSettings.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnMenuSettings.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnMenuSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuSettings.Image = global::digitalsignatures.Properties.Resources.settings_64x64;
-            this.btnMenuSettings.Location = new System.Drawing.Point(451, 20);
-            this.btnMenuSettings.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMenuSettings.Name = "btnMenuSettings";
-            this.btnMenuSettings.Size = new System.Drawing.Size(140, 150);
-            this.btnMenuSettings.TabIndex = 3;
-            this.btnMenuSettings.Text = "Settings";
-            this.btnMenuSettings.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnMenuSettings.UseVisualStyleBackColor = true;
-            this.btnMenuSettings.Click += new System.EventHandler(this.btnMenuSettings_Click);
-            // 
-            // btnNewKey
-            // 
-            this.btnNewKey.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNewKey.FlatAppearance.BorderSize = 0;
-            this.btnNewKey.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnNewKey.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnNewKey.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnNewKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewKey.Image = ((System.Drawing.Image)(resources.GetObject("btnNewKey.Image")));
-            this.btnNewKey.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNewKey.Location = new System.Drawing.Point(0, 0);
-            this.btnNewKey.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNewKey.Name = "btnNewKey";
-            this.btnNewKey.Size = new System.Drawing.Size(105, 93);
-            this.btnNewKey.TabIndex = 0;
-            this.btnNewKey.Text = "New key";
-            this.btnNewKey.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnNewKey.UseVisualStyleBackColor = true;
-            this.btnNewKey.Click += new System.EventHandler(this.MenuItemNewKey_Click);
-            // 
-            // btnSignFile
-            // 
-            this.btnSignFile.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSignFile.FlatAppearance.BorderSize = 0;
-            this.btnSignFile.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSignFile.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnSignFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignFile.Image = ((System.Drawing.Image)(resources.GetObject("btnSignFile.Image")));
-            this.btnSignFile.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSignFile.Location = new System.Drawing.Point(0, 0);
-            this.btnSignFile.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSignFile.Name = "btnSignFile";
-            this.btnSignFile.Size = new System.Drawing.Size(105, 93);
-            this.btnSignFile.TabIndex = 0;
-            this.btnSignFile.Text = "Sign files";
-            this.btnSignFile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSignFile.UseVisualStyleBackColor = true;
-            this.btnSignFile.Click += new System.EventHandler(this.MenuItemSignFile_Click);
-            // 
-            // btnVerify
-            // 
-            this.btnVerify.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVerify.FlatAppearance.BorderSize = 0;
-            this.btnVerify.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnVerify.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnVerify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerify.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerify.Image = ((System.Drawing.Image)(resources.GetObject("btnVerify.Image")));
-            this.btnVerify.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnVerify.Location = new System.Drawing.Point(0, 0);
-            this.btnVerify.Margin = new System.Windows.Forms.Padding(2);
-            this.btnVerify.Name = "btnVerify";
-            this.btnVerify.Size = new System.Drawing.Size(105, 93);
-            this.btnVerify.TabIndex = 0;
-            this.btnVerify.Text = "Verify file";
-            this.btnVerify.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnVerify.UseVisualStyleBackColor = true;
-            this.btnVerify.Click += new System.EventHandler(this.MenuItemVerifyFile_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnBack.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(23, 22);
-            this.btnBack.Text = "Meny";
-            this.btnBack.ToolTipText = "Tilbake til hovedmeny";
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // lbLog
-            // 
-            this.lbLog.BackColor = System.Drawing.SystemColors.Info;
-            this.lbLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbLog.FormattingEnabled = true;
-            this.lbLog.ItemHeight = 15;
-            this.lbLog.Location = new System.Drawing.Point(0, 0);
-            this.lbLog.Name = "lbLog";
-            this.lbLog.Size = new System.Drawing.Size(1214, 118);
-            this.lbLog.TabIndex = 0;
             // 
             // FormMain
             // 
