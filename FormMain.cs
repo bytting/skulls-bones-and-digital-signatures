@@ -115,7 +115,7 @@ namespace nrpa_keys
         private void MenuItemNewKey_Click(object sender, EventArgs e)
         {            
             FormName form = new FormName();
-            if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (form.ShowDialog() == DialogResult.OK)
             {
                 string basePrivKeyName = tbSettingsPrivateKeyFolder.Text + Path.DirectorySeparatorChar + form.NewName + ".privkey";
                 string basePubKeyName = tbSettingsPublicKeyFolder.Text + Path.DirectorySeparatorChar + form.NewName + ".pubkey";
@@ -179,7 +179,7 @@ namespace nrpa_keys
             {
                 sig.LoadKeys(privKeyFilename, password);
             }            
-            catch(Exception ex)
+            catch
             {                
                 LogLine("Invalid password");                
                 return;
@@ -260,11 +260,6 @@ namespace nrpa_keys
 
                 var hashedData = sha256.ComputeHash(bytes);
                 verified = sig.VerifySignature(hashedData, signature);
-            }
-            catch (DigitalSignatureException ex)
-            {
-                LogLine(ex.Message);                
-                return;
             }
             catch (Exception ex)
             {
@@ -405,10 +400,6 @@ namespace nrpa_keys
             try
             {
                 sig.LoadKeys(privKeyFilename, password);
-            }
-            catch (DigitalSignatureException ex)
-            {
-                LogLine(ex.Message);
             }
             catch (Exception ex)
             {

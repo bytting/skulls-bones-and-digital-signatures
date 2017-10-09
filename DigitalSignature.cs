@@ -1,27 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿/*
+    Skulls, Bones and Digital Signatures
+    Copyright (C) 2017  Dag Robole
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * */
+using System;
 using System.Text;
 using System.IO;
 using System.Security.Cryptography;
 
 namespace nrpa_keys
-{    
-    class DigitalSignatureException : Exception
-    {
-        private string mMsg;
-
-        public DigitalSignatureException(string msg)
-        {
-            mMsg = msg;
-        }
-
-        public override string Message
-        {
-            get { return mMsg; }            
-        }
-    }
-
+{
     class DigitalSignature
     {
         private const int mSaltSize = 8;
@@ -55,7 +55,8 @@ namespace nrpa_keys
         public void SavePublicKey(string pubKeyFile)
         {            
             FileInfo fiPub = new FileInfo(pubKeyFile);
-            SaveToFile(fiPub, mRsa.ToXmlString(false));
+            using (StreamWriter fileStream = fiPub.CreateText())            
+                fileStream.Write(mRsa.ToXmlString(false));
         }
 
         public void LoadKeys(string privKeyFile, string password)
@@ -94,9 +95,8 @@ namespace nrpa_keys
 
         public void SaveSignature(string sigFile, byte[] signature)
         {
-            StreamWriter sw = new StreamWriter(sigFile);
-            sw.Write(Convert.ToBase64String(signature));
-            sw.Close();
+            using (StreamWriter sw = new StreamWriter(sigFile))            
+                sw.Write(Convert.ToBase64String(signature));
         }
 
         public byte[] LoadSignature(string sigFile)
@@ -105,7 +105,7 @@ namespace nrpa_keys
             byte[] signature = null;
 
             if (!File.Exists(sigFile))
-                throw new DigitalSignatureException("The file " + sigFile + " was not found");
+                throw new IOException("The file " + sigFile + " was not found");
 
             try
             {
@@ -114,7 +114,7 @@ namespace nrpa_keys
             }
             catch
             {
-                throw new DigitalSignatureException("The file " + sigFile + " has invalid format");
+                throw new FormatException("The file " + sigFile + " has invalid format");
             }
 
             return signature;
@@ -164,13 +164,6 @@ namespace nrpa_keys
             }
 
             return data;
-        }
-
-        private void SaveToFile(FileInfo targetFile, string data)
-        {
-            var fileStream = targetFile.CreateText();
-            fileStream.Write(data);
-            fileStream.Close();
         }
 
         private byte[] GetBytes(string str)
